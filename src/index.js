@@ -2,10 +2,9 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
-
-  cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(temperature);
-}
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
 
 function searchCity(city) {
   let apiKey = "142t39083aab4bfed6aa65d881oa03b4";
@@ -20,5 +19,5 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-let searchFormatElement = document.querySelector("#search-form");
+let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
